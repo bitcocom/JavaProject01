@@ -41,7 +41,7 @@ public class PetMain {
                     MedicalRecord newRecord = view.getMedicalRecordInfo();
                     newRecord.setPhoneNumber(phoneNumber);
                     recordController.addMedicalRecord(newRecord);
-                    customer.addMedicalRecords(newRecord);
+                    //customer.addMedicalRecords(newRecord);
                     view.printMessage("진료기록이 저장되었습니다.");
                     break;
 
@@ -53,7 +53,7 @@ public class PetMain {
                         break;
                     }
                     customer = customerController.findCustomer(phoneNumber);
-                    view.printMedicalRecordInfo(customer);
+                    view.printMedicalRecordInfo(customer, records); // 수정
                     break;
 
                 case 4:
@@ -62,7 +62,7 @@ public class PetMain {
                         view.printMessage("해당 전화번호를 가진 고객 정보가 없습니다.");
                         break;
                     }
-
+                    //고객의 medicalRecords를 가져와서 여기서 삭제
                     recordController.removeMedicalRecord(phoneNumber);
                     view.printMessage("진료기록 정보가 삭제되었습니다.");
                     break;

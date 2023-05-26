@@ -39,8 +39,8 @@ public class ConsoleView {
         return new MedicalRecord(null, date, content);
     }
     // 진료기록 조회하여 출력
-    public void printMedicalRecordInfo(Customer customer) {
-        List<MedicalRecord> records = customer.getMedicalRecords();
+    public void printMedicalRecordInfo(Customer customer, List<MedicalRecord> records) {
+        //List<MedicalRecord> records = customer.getMedicalRecords(); // 수정
         System.out.println("[" + customer.getPetName() + "]의 진료기록");
         for (MedicalRecord record : records) {
             System.out.println("- 진료일: " + record.getDate());
